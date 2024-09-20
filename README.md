@@ -25,6 +25,17 @@ Example 2:
 
 
 
+## Compilation
+
+```
+mvn clean install
+```
+
+## package jar
+```
+mvn clean package
+```
+
 ---
 
 ## New Featurtes
@@ -35,7 +46,7 @@ These features are for practice and preparation for evaluation. Please create th
  `animal/category/{categoty}`
 
 2. List of animals whose names have less than n letters
- `animal/name/{numberOfLetters}`
+ `animal/name-length/{numberOfLetters}`
 
 
 ## use new endpoint
@@ -45,4 +56,4 @@ Example 1:
 `http://localhost:8081/animal/category/Lost`
 
 Example 2: 
-`http://localhost:8081/animal/name/4`
+`http://localhost:8081/animal/name-length/4`

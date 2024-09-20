@@ -1,13 +1,12 @@
-package co.edu.uptc.people_rest;
+package co.edu.uptc.animals_rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PeopleRestApplication {
-
+public class AnimalRestApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(PeopleRestApplication.class, args);
+		SpringApplication.run(AnimalRestApplication.class, args);
 		
 	}
 

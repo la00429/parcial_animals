@@ -1,4 +1,4 @@
-package co.edu.uptc.people_rest.exception;
+package co.edu.uptc.animals_rest.exception;
 
 
 public class InvalidRangeException extends RuntimeException {

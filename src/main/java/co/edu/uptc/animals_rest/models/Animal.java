@@ -1,4 +1,4 @@
-package co.edu.uptc.people_rest.models;
+package co.edu.uptc.animals_rest.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Animal {
-    private String nombre;
-    private String categoria;
+    private String name;
+    private String category;
 }

@@ -52,8 +52,8 @@ These features are for practice and preparation for evaluation. Please create th
 ## use new endpoint
 
 Example 1: 
-`http://localhost:8081/animal/category/Mamíferos`
-`http://localhost:8081/animal/category/Lost`
+- `http://localhost:8081/animal/category/Mamíferos`
+- `http://localhost:8081/animal/category/Lost`
 
 Example 2: 
-`http://localhost:8081/animal/name-length/4`
+- `http://localhost:8081/animal/name-length/4`

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import co.edu.uptc.animals_rest.exception.InvalidRangeException;
 import co.edu.uptc.animals_rest.models.Animal;
+import co.edu.uptc.animals_rest.models.Category;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,6 @@ public class AnimalService {
         List<String> listAnimal = Files.readAllLines(Paths.get(filePath));
         List<Animal> animales = new ArrayList<>();
         
-
         for (String line : listAnimal) {
             String[] parts = line.split(",");
             if (parts.length == 2) {
@@ -59,5 +59,27 @@ public class AnimalService {
     
         return animales;
     }
+
+    public List<Category> getAnimalNumberCategory() throws IOException {
+        List<String> listAnimal = Files.readAllLines(Paths.get(filePath));
+        List<Category> categoriesAnimals = new ArrayList<>();
+        List<Animal> animals = getAnimalAll();
+        for (String line : listAnimal) {
+            int numberCategory = 0;
+            String[] parts = line.split(",");
+            if (parts.length == 2) {
+                String category = parts[0].trim();
+                for (Animal animal : animals) {
+                    if(animal.getCategory().equals(category)){
+                        numberCategory++;
+                    }
+                }
+                categoriesAnimals.add(new Category(category, numberCategory));         
+        }
+    
+        return categoriesAnimals;
+    }
+
+
 }
 

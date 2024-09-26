@@ -38,6 +38,14 @@ public class AnimalController {
         logger.info("getAnimal called with parameters: from = {}, to = {}", from, to);
         return animalService.getAnimalInRange(from, to);
     }
+    
+    @GetMapping("/numberByCategory")
+    public List<Animal> getAnimal() throws IOException {
+        logger.info("getAnimalAll called");
+        return animalService.getAnimalNumberCategory();
+    }
+
+    
 
 
 }

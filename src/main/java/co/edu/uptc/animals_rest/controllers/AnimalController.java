@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.uptc.animals_rest.models.Animal;
+import co.edu.uptc.animals_rest.models.Category;
 import co.edu.uptc.animals_rest.services.AnimalService;
 
 
@@ -40,12 +41,8 @@ public class AnimalController {
     }
     
     @GetMapping("/numberByCategory")
-    public List<Animal> getAnimal() throws IOException {
-        logger.info("getAnimalAll called");
+    public List<Category> getAnimalNumbCategories() throws IOException {
+        logger.info("getCaregoryAnimalAll called");
         return animalService.getAnimalNumberCategory();
     }
-
-    
-
-
 }

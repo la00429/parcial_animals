@@ -65,22 +65,32 @@ public class AnimalService {
         List<String> listAnimal = Files.readAllLines(Paths.get(filePath));
         List<Category> categoriesAnimals = new ArrayList<>();
         List<Animal> animals = getAnimalAll();
+        int number = 0;
         for (String line : listAnimal) {
-            int number = 0;
             String[] parts = line.split(",");
             if (parts.length == 2) {
                 String category = parts[0].trim();
-                String categoryAnimal = "";
-                for (Animal animal : animals) {
-                    categoryAnimal = animal.getCategory();
-                    if (animal.getCategory().equals(category)) {
-                        number++;
+                    if (!searchCategory(categoriesAnimals, category)) {
+                        for (Animal animal : animals) {
+                            if (animal.getCategory().equals(category)) {
+                                number++;
+                            }
+                        }
+                        categoriesAnimals.add(new Category(category, number));
+                        number = 0;
                     }
-                }
-                categoriesAnimals.add(new Category(categoryAnimal, number));
             }
         }
         return categoriesAnimals;
+    }
+
+    private boolean searchCategory(List<Category> categories, String category) {
+        for (Category categoryFound : categories) {
+            if (categoryFound.getCategory().equals(category)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
